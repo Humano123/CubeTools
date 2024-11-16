@@ -4,430 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="logotipo.png" type="image/x-icon">
-    <title>CubeTools</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: azure;
-        }
-
-        .parteCIMA,
-        .parteMEIO,
-        .parteBAIXO,
-        .partePROFUNDA,
-        .parteEXTREMA,
-        .parteERRO {
-            background-color: darksalmon;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            position: relative;
-            padding: 20px;
-            z-index: 1;
-        }
-
-        .parteMEIO {
-            background-color: blue;
-            color: aliceblue;
-        }
-
-        .parteBAIXO {
-            text-align: center;
-            background-color: hotpink;
-            color: white;
-        }
-
-        .partePROFUNDA {
-            text-align: center;
-            background-color: darkslategrey;
-            color: white;
-        }
-
-        .parteEXTREMA {
-            background-color: red;
-            color: white;
-        }
-
-        .parteERRO {
-            background-color: red;
-            color: white;
-        }
-
-        .header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 2em;
-        }
-
-        .titulo {
-            font-size: 10vmax;
-        }
-
-        #parte {
-            width: 100%;
-            height: 110vh;
-        }
-
-        .partes {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 10;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0);
-        }
-
-        .aquele {
-            color: black;
-        }
-
-        .bt {
-            background-color: rgba(0, 128, 0, 0);
-            color: black;
-            border: 0;
-            border-radius: 0;
-            text-decoration: none;
-            transition: all 0.5s;
-            font-size: xx-large;
-            margin: 5px;
-        }
-
-        .bt:hover {
-            color: gray;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        .dividir {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 20px;
-            flex-wrap: wrap;
-        }
-
-        .bloco {
-            background-color: white;
-            color: black;
-            height: auto;
-            border-radius: 0.4vmax;
-            text-align: center;
-            width: 10vmax;
-            transform: rotateY(-45deg);
-            transition: all 0.3s ease;
-        }
-
-        .bloco:hover {
-            transform: rotate(0deg);
-        }
-
-        .bloco:active {
-            transform: rotateY(45deg);
-        }
-
-        .D {
-            perspective: 800px;
-        }
-
-        .hr {
-            border: 1px solid black;
-        }
-
-        .sobree {
-            padding: 10px;
-            width: 400px;
-            height: 300px;
-            overflow-y: auto;
-            margin-right: 20px;
-        }
-
-        a {
-            color: red;
-        }
-
-        .galeriaa {
-            background-color: white;
-            color: black;
-            overflow-x: auto;
-            overflow-y: hidden;
-            border: 1px solid white;
-            width: 50vmax;
-            height: 5vmax;
-            padding: 10px;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            white-space: nowrap;
-            scrollbar-width: thin;
-        }
-
-        .galeriaa a {
-            display: inline-block;
-            margin-right: 20px;
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        .galeriaa::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .galeriaa::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-        }
-
-        .galeriaa::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.1);
-        }
-
-        .normal {
-            color: black;
-        }
-
-        .best {
-            color: red;
-        }
-
-        @media(max-width:768px) {
-            .header h1 {
-                font-size: 1.5em;
-            }
-
-            .titulo {
-                font-size: 8vmax;
-            }
-
-            .bloco {
-                width: 90%;
-                margin: 10px auto;
-            }
-
-            .sobree {
-                width: 90%;
-                margin-right: 0;
-            }
-
-            .partes {
-                width: 100%;
-                scale: 0.5;
-            }
-
-            .galeriaa {
-                flex-direction: column;
-                height: auto;
-            }
-        }
-
-        @media(max-width:480px) {
-            .titulo {
-                font-size: 6vmax;
-            }
-
-        }
-
-        .mh {
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            height: 50px;
-            width: 50px;
-            border: 0;
-            background-color: rgba(0, 255, 0, 0);
-            transition: all 0.4s ease;
-        }
-
-        .mh:hover {
-            cursor: pointer;
-        }
-
-        .mh:active {
-            cursor: progress;
-        }
-
-        .termos {
-            background-color: aliceblue;
-            color: black;
-            width: 100%;
-            height: 100vh;
-            scale: 1;
-            position: fixed;
-            text-align: center;
-            overflow-y: auto;
-        }
-
-        .bts {
-            color: black;
-            background-color: rgb(0, 0, 0, 0);
-            border: 0;
-            font-size: 1.5vmax;
-            transition: all 0.5s ease;
-        }
-
-        .bts:hover {
-            border: 0;
-            cursor: pointer;
-            color: gray;
-            text-decoration: underline;
-        }
-
-        .asdasd {
-            text-align: center;
-            display: flex;
-            gap: 20px;
-            justify-content: space-evenly;
-        }
-
-
-
-
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.5em;
-            }
-
-            .titulo {
-                font-size: 6vmax;
-            }
-
-            .bloco {
-                width: 80%;
-                margin: 10px auto;
-            }
-
-            .sobree {
-                width: 100%;
-                margin-right: 0;
-            }
-
-            .partes {
-                width: 100%;
-                scale: 0.8;
-                padding: 10px;
-            }
-
-            .galeriaa {
-                width: 90%;
-                height: auto;
-                padding: 10px;
-                flex-direction: column;
-                margin-bottom: 20px;
-            }
-
-            .galeriaa a {
-                margin-right: 0;
-                margin-bottom: 10px;
-                width: 100%;
-                text-align: left;
-            }
-
-            .asdasd {
-                display: block;
-                gap: 10px;
-                margin: 0 auto;
-                padding: 10px;
-            }
-
-            #pesquisaGaleria,
-            #pesquisaMelhores {
-                font-size: medium;
-                padding: 10px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .partes {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                z-index: 1000;
-                /* Mantém sempre por cima dos outros elementos */
-                background-color: rgba(255, 255, 255, 0.9);
-                /* Fundo opaco para garantir visibilidade */
-                padding: 10px;
-                display: flex;
-                justify-content: space-around;
-                /* Distribui os itens igualmente */
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                /* Destaque no topo */
-                height: auto;
-                /* Garante que a altura seja ajustada corretamente */
-                scale: 0.8;
-                /* Mantém a escala, mas não interfere na altura */
-            }
-        }
-
-        /* @media (max-width: 768px) {
-    .partes {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background-color: rgba(255, 255, 255, 0.9); /* Mantém o menu visível com fundo leve */
-        /*padding: 10px;
-        /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra para destacar */
-        /*scale: 0.8; /* Mantém a escala já existente */
-        /*}*/
-        /*} */
-
-        @media (max-width: 480px) {
-            .titulo {
-                font-size: 5vmax;
-            }
-
-            .bloco {
-                width: 95%;
-            }
-
-            .partes {
-                scale: 0.6;
-            }
-
-            .galeriaa {
-                width: 100%;
-                height: auto;
-                padding: 5px;
-                flex-direction: column;
-                margin-bottom: 10px;
-            }
-
-            .sobree {
-                width: 100%;
-                height: auto;
-                padding: 5px;
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+    <link rel="shortcut icon" href="design/images/logotipo.png" type="image/x-icon">
+    <link rel="stylesheet" href="design/scripts/geral.css">
+    <script src="https://www.google.com/recaptcha/api.js?render=SUA_SITE_KEY"></script>
+    <title id="titlesite">Carregando...</title>
 </head>
 
 <body>
-    <!-- <section id="termos" class="termos" style="position: fixed; z-index: 15;">
+    <section id="FALSOSITE">
+        <h1>ESSE SITE NÃO É VERDADEIRO!</h1>
+        <p>O site verdadeiro é <a href="https://humano123.github.io/CubeTools/">outro</a>, esse site que você está
+            AGORA, possivelmente pode ser GOLPE, abaixe da fonte verdadeira! por favor, NÃO EXECUTE/ABAIXAR
+            <strong>QUAISQUER COISA QUE ESSA SITE PEDIR</strong> DESSE SITE QUE VOCÊ ESTÁ AGORA!
+        </p>
+        <p>Aperte no botão para continuar o risco, caso deseja ir para o site verdadeiro, <a
+                href="https://humano123.github.io/CubeTools/">clique aqui!</a></p>
+        <button onclick="riscoCont()">Continuar do mesmo jeito</button>
+        <button onclick="riscoVer()">Continuar sem abaixar nada</button>
+        <button onclick="seguro()">Remover tudo do site para segurança</button>
+    </section>
+    <div id="tuuudo">
+        <!-- <section id="termos" class="termos" style="position: fixed; z-index: 15;">
         <h1>Termos de uso</h1>
         <ul>
             <li>1. Não fazer nada de malicioso no site, ou fazer algo que pode danificar seu dispositivo, caso
@@ -441,79 +38,121 @@
             </div>
         </ul>
     </section> -->
-    <div style="border:1px solid black;position:fixed;z-index:10;" class="partes">
-        <div style="display:flex;">
+        <div style="border:1px solid black;position:fixed;z-index:10;" class="partes">
+            <!-- <div style="display:flex;">
             <a target="_blank" href="https://linktr.ee/meiahub">
                 <input class="mh" type="button">
             </a>
+        </div> -->
+
+            <div id="mostt">
+                <a href="#Sobre" ondragstart="return false"><button id="par" class="bt">Sobre</button></a>
+                <a href="#Download" ondragstart="return false"><button class="bt">Baixar</button></a>
+                <a href="#Pontos-Positivos" ondragstart="return false"><button class="bt">Pontos positivo</button></a>
+                <a href="#Novidades" ondragstart="return false"><button class="bt">Novidades</button></a>
+                <a id="devao" style="display: none;" href="#dev" ondragstart="return false"><button class="bt">DEV</button></a>
+                <a href="#E" ondragstart="return false"><button id="ErroMostrar" class="bt">Motivo do erro</button></a>
+            </div>
+            <div id="ban">
+                <button id="par" class="btt">Sobre</button>
+                <button class="btt">Baixar</button>
+                <button class="btt">Pontos positivo</button>
+            </div>
         </div>
-        <a href="#Sobre" ondragstart="return false"><button id="par" class="bt">Sobre</button></a>
-        <a href="#Download" ondragstart="return false"><button class="bt">Baixar</button></a>
-        <a href="#Pontos-Positivos" ondragstart="return false"><button class="bt">Pontos positivo</button></a>
-        <a href="#E" ondragstart="return false"><button id="ErroMostrar" class="bt">Motivo do erro</button></a>
-    </div>
-    <section id="Sobre" class="parteCIMA">
-        <div class="dividir">
-            <h1 class="titulo">CubeTools</h1>
-            <section class="sobree">
-                <h1>CubeTools</h1>
+        <section id="Sobre" class="parteCIMA">
+            <div class="dividir">
+                <h1 class="titulo">CubeTools</h1>
+                <section class="sobree">
+                    <h1>CubeTools</h1>
+                    <hr>
+                    <p>CubeTools é uma utilidade de cada linha de comandos em modo de interação com o sistema Windows.
+                        Ele possibilita a execução de variados comandos preestabelecidos por ele com a finalidade da
+                        execução de programas, apresentação de dados do sistema, informação sobre a conectividade com a
+                        internet, apresentação da RAM, entre outras adicionais.</p>
+                </section>
+                <div class="D">
+                    <div class="bloco">
+                        <h1>CubeTools</h1>
+                        <hr class="hr">
+                        <h1>Interaja com seu computador!</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Download" class="parteMEIO">
+            <div class="dividir">
+                <h1 class="titulo">Não perca tempo!!!</h1>
+                <p>CubeTools é PERFEITO!</p>
+                <div class="D">
+                    <div class="bloco">
+                        <h1>CubeTools</h1>
+                        <hr class="hr">
+                        <h1>M-A-R-A-V-I-L-H-O-S-O-!</h1>
+                    </div>
+                </div>
+            </div>
+            <h1 id="ban2">CUIDADO!</h1>
+            <button id="baixarxa" class="baixarxa">Abaixar</button>
+        </section>
+        <section id="Pontos-Positivos" class="parteBAIXO">
+            <h1 class="titulo">Pontos positivos:</h1>
+            <div style="color: black; border: 2px solid black;" class="pstv">
+                <h3>É facil de usar</h3>
                 <hr>
-                <p>CubeTools é uma utilidade de cada linha de comandos em modo de interação com o sistema Windows. Ele possibilita a execução de variados comandos preestabelecidos por ele com a finalidade da execução de programas, apresentação de dados do sistema, informação sobre a conectividade com a internet, apresentação da RAM, entre outras adicionais.</p>
+                <h3>É poderoso</h3>
+                <hr>
+                <h3>É gratuito</h3>
+                <hr>
+                <h3>É extremamente leve (na casa dos KB)</h3>
+                <hr>
+                <h3>Pode programar em BATCH</h3>
+                <hr>
+                <h3>Entre outros pontos positivos</h3>
+            </div>
+        </section>
+        <section id="Novidades" class="parteNOVO">
+            <h1 class="titulo">Novidades</h1>
+            <section class="novo">
+                <div class="dentu">
+                    <h4>Nova parte</h4>
+                    <hr>
+                    <p>Foi adicionado uma nova etapa (Novidades) ela serve para mostrar as atualizações do CubeTools, tanto do site, quanto do aplicativo em si.</p>
+                    <br>
+                    <h4>Segurança</h4>
+                    <hr>
+                    <p>Foi adicionado nova medida de segurança contra golpes, por exemplo, quando alguem "roubar" o codigo inteiro do site, iremos avisar quando o codigo foi "roubado".</p>
+                    <br>
+                    <h4>Termos de Condição de Uso</h4>
+                    <hr>
+                    <p>Adicionamos um termos de condição de uso no aplicativo, que diz que caso danifique o seu computador por causa do CubeTools, não seremos responsaveis pelos os danos.</p>
+                    <br>
+                    <h4>Segredos</h4>
+                    <hr>
+                    <p>Adicionamos uns segredinhos no site bem divertidos.</p>
+                    <br>
+                    <h4>Bugs</h4>
+                    <hr>
+                    <p>Resolvemos alguns bugs.</p>
+                    <br>
+                </div>
             </section>
-            <div class="D">
-            <div class="bloco">
-                <h1>CubeTools</h1>
-                <hr class="hr">
-                <h1>Interaja com seu computador!</h1>
-            </div>
-            </div>
-        </div>
-    </section>
-    <section id="Download" class="parteMEIO">
-        <div class="dividir">
-            <h1 class="titulo">Não perca tempo!!!</h1>
-            <p>CubeTools é PERFEITO!</p>
-            <div class="D">
-                <div class="bloco">
-                <h1>CubeTools</h1>
-                <hr class="hr">
-                <h1>M-A-R-A-V-I-L-H-O-S-O-!</h1>
-            </div>
-        </div>
+        </section>
+        <section style="justify-content: center; align-items: center; flex-direction: column; height: 100vh; position: relative; padding: 20px; z-index: 1; background-color: black; color: white; display: none;" id="dev" class="parteDEV">
+            <h1 class="titulo">Modo DEV foi ativado!</h1>
+            <p>Caso apareça isso, e você não for um dos desenvolvedores, saia do site imediatamente, isso pode ser um site falso, já que o site original só funciona a base de url verdadeira, caso contrario, irá aparecer isso mais uns outros avisos de seguranças, caso você esteja em uma url de desenvolvedor mesmo, não acontecerá nada, já que o modo dev so avisa que é modo dev, e recebe as atualizações extremamente rapida (imediatamente)</p>
+            <h5 style="color: red; text-align: center;">Essa etapa não aparece originalmente!</h5>
+        </section>
+        <section id="E" class="parteERRO">
+            <h1 class="titulo">Erro</h1>
+            <p id="error">Motivo: Desconhecido</p>
+        </section>
+        <script src="scripts/security/desktop/segurança.js"></script>
+        <script src="scripts/security/bot/segurançaBotMouse.js"></script>
+        <script src="scripts/segurança.js"></script>
+        <script src="scripts/segredos.js"></script>
+        <script src="scripts/erro.js"></script>
+        <script src="scripts/dev/dev.js"></script>
     </div>
-    <button style="background-color: green; color: white; border: none; width: 100px;">Abaixar</button>
-    </section>
-    <section id="Pontos-Positivos" class="parteBAIXO">
-        <h1 class="titulo">Pontos positivos:</h1>
-        <div style="color: black; border: 2px solid black;" class="pstv">
-            <h3>É facil de usar</h3>
-            <hr>
-            <h3>É poderoso</h3>
-            <hr>
-            <h3>É gratuito</h3>
-            <hr>
-            <h3>É extremamente leve (na casa dos KB)</h3>
-            <hr>
-            <h3>Pode programar em BATCH</h3>
-            <hr>
-            <h3>Entre outros pontos positivos</h3>
-        </div>
-    </section>
-    <section id="E" class="parteERRO">
-        <h1 class="titulo">Erro</h1>
-        <p id="error">Motivo: Desconhecido</p>
-    </section>
-    <script>
-
-        document.getElementById("E").style.display = "none";
-        document.getElementById("ErroMostrar").style.display = "none";
-
-        if (window.location.search.includes('?teste')) {
-            document.getElementById("E").style.display = "block";
-            document.getElementById("ErroMostrar").style.display = "block";
-        }
-
-    </script>
 </body>
 
 </html>
