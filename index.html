@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="design/images/logotipo.png" type="image/x-icon">
+    <link id="favicon" rel="shortcut icon" href="design/images/logotipo3.png" type="image/x-icon">
     <link rel="stylesheet" href="design/scripts/geral.css">
-    <script src="https://www.google.com/recaptcha/api.js?render=SUA_SITE_KEY"></script>
     <title id="titlesite">Carregando...</title>
 </head>
 
@@ -51,8 +50,8 @@
                 <a href="#Pontos-Positivos" ondragstart="return false"><button class="bt">Pontos positivo</button></a>
                 <a href="#Novidades" ondragstart="return false"><button class="bt">Novidades</button></a>
                 <!-- <a href="#Aviso" ondragstart="return false"><button class="bt">Aviso</button></a> -->
-                <a id="devao" style="display: none;" href="#dev" ondragstart="return false"><button class="bt">DEV</button></a>
                 <a href="#E" ondragstart="return false"><button id="ErroMostrar" class="bt">Motivo do erro</button></a>
+                <a id="devao" style="display: none;" href="#dev" ondragstart="return false"><button class="bt">DEV</button></a>
             </div>
             <div id="ban">
                 <button id="par" class="btt">Sobre</button>
@@ -79,6 +78,7 @@
                     </div>
                 </div>
             </div>
+            <h1>Feito por MeiaHub</h1>
         </section>
         <section id="Download" class="parteMEIO">
             <div class="dividir">
@@ -144,14 +144,14 @@
             <p>Preste atenção nas palavras/textos em vermelhas</p>
             <p>O CubeTools, usa BATCH (.bat) em sua linguagem, e tem como você usar comandos em batch ou os comandos do próprio CubeTools, <strong class="redd">PORTANTO</strong>, tem como você usar o comando DEL (delete) e isso faz você ter o poder de deletar alguns arquivos, e pode ser alguns arquivos importantes, mas não é só o DEL (delete) que é perigoso, tem diversos, mas por causa disso, o Windows Defenser ele ativa falando que é perigoso para seu computador, que realmente é caso não saiba usar, portanto, recomendo <strong class="redd">NÃO</strong> usar os comandos perigosos <strong class="redd">(DEL, RMDIR, SHUTDOWN, FORMAT, TASKKILL, REG, SC, DISKPART, BOOTREC, etc)</strong></p>
         </section> -->
+        <section id="E" class="parteERRO">
+            <h1 class="titulo">Erro</h1>
+            <p id="error">Motivo: Desconhecido</p>
+        </section>
         <section style="justify-content: center; align-items: center; flex-direction: column; height: 100vh; position: relative; padding: 20px; z-index: 1; background-color: black; color: white; display: none;" id="dev" class="parteDEV">
             <h1 class="titulo">Modo DEV foi ativado!</h1>
             <p>Caso apareça isso, e você não for um dos desenvolvedores, saia do site imediatamente, isso pode ser um site falso, já que o site original só funciona a base de url verdadeira, caso contrario, irá aparecer isso mais uns outros avisos de seguranças, caso você esteja em uma url de desenvolvedor mesmo, não acontecerá nada, já que o modo dev so avisa que é modo dev, e recebe as atualizações extremamente rapida (imediatamente)</p>
             <h5 style="color: red; text-align: center;">Essa etapa não aparece originalmente!</h5>
-        </section>
-        <section id="E" class="parteERRO">
-            <h1 class="titulo">Erro</h1>
-            <p id="error">Motivo: Desconhecido</p>
         </section>
         <script src="scripts/security/desktop/segurança.js"></script>
         <script src="scripts/security/bot/segurançaBotMouse.js"></script>
@@ -159,6 +159,7 @@
         <script src="scripts/segredos.js"></script>
         <script src="scripts/erro.js"></script>
         <script src="scripts/dev/dev.js"></script>
+        <script src="scripts/security/mobile/SemMobile.js"></script>
     </div>
 </body>
 

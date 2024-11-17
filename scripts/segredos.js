@@ -3,7 +3,7 @@ if (window.location.search.includes('?teste')) {
     document.getElementById("ErroMostrar").style.display = "block";
 }
 
-if (window.location.href.includes("#meme")) {
+if (window.location.href.includes("?meme")) {
     document.getElementById("tuuudo").style.transition = "5s ease";
     document.getElementById("tuuudo").style.transform = "rotateY(180deg)";
 }
@@ -16,6 +16,30 @@ if (window.location.href.includes("#ops")) {
     });
 }
 
-if (window.location.href.includes("#MeiaHub")) {
+if (window.location.href.includes("?MeiaHub")) {
     window.location.href = "https://linktr.ee/meiahub"
+}
+
+if (window.location.href.includes('?logotipoAntiga')) {
+    const favicon = document.getElementById("favicon");
+    if (favicon) {
+        favicon.href = "design/images/logotipo.png"
+    }
+} else if (window.location.href.includes('?logotipoExcluida')) {
+    const favicon = document.getElementById("favicon");
+    if (favicon) {
+        favicon.href = "design/images/logotipo2.png"
+    }
+} else {
+    const favicon = document.getElementById("favicon");
+    if (favicon) {
+        favicon.href = "design/images/logotipo3.png"
+    }
+}
+
+if (window.location.href.includes('?normal')) {
+    document.getElementById("devao").style.display = "none";
+    document.getElementById("dev").style.display = "none";
+    document.getElementsByTagName("title")[0].innerHTML = "CubeTools";
+    console.log("O modo dev foi desabilitado!")
 }

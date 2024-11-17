@@ -55,3 +55,11 @@ if (window.location.href.includes("http://127.0.0.1:5500/")) {
         document.body.innerHTML = '';
     }
 }
+
+console.warn(`
+    CUIDADO!!!
+
+    NÃO USE NENHUM COMANDO POR AQUI!!!
+    PODE SER PREJUDICIAL AO SITE E PARA VOCÊ!!!
+    
+    `)
