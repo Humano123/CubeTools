@@ -19,7 +19,8 @@ body {
 .partePROFUNDA,
 .parteEXTREMA,
 .parteERRO,
-.parteNOVO {
+.parteNOVO,
+.parteAVISO {
     background-color: darksalmon;
     color: white;
     display: flex;
@@ -63,6 +64,11 @@ body {
     background-color: forestgreen;
     color: white;
 }
+
+.parteAVISO {
+    background-color: rgb(95, 95, 0);
+    color: white;
+}
 .header {
     position: absolute;
     top: 0;
@@ -86,15 +92,15 @@ body {
 }
 
 .partes {
-    width: 100%;
+    width: 50%;
+    transform: translateX(50%);
     display: flex;
     justify-content: center;
     position: fixed;
-    top: 0;
-    left: 0;
     z-index: 10;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(128, 128, 128, 0);
+    border: 1px solid black;
 }
 
 .aquele {
@@ -107,13 +113,13 @@ body {
     border: 0;
     border-radius: 0;
     text-decoration: none;
-    transition: all 0.5s;
+    transition: all 0.1s;
     font-size: xx-large;
     margin: 5px;
 }
 
 .bt:hover {
-    color: gray;
+    color: rgb(55, 55, 55);
     cursor: pointer;
     text-decoration: underline;
 }
@@ -240,7 +246,7 @@ a {
     }
 
     .partes {
-        width: 100%;
+        width: 50%;
         scale: 0.5;
     }
 
@@ -332,9 +338,8 @@ a {
     }
 
     .partes {
-        width: 100%;
+        width: 50%;
         scale: 0.8;
-        padding: 10px;
     }
 
     .galeriaa {
@@ -368,10 +373,9 @@ a {
 
 @media (max-width: 768px) {
     .partes {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
+        /* position: fixed;
+        width: 50%;
+        transform: scaleX(200%);
         z-index: 1000;
         background-color: rgba(255, 255, 255, 0.9);
         padding: 10px;
@@ -379,7 +383,8 @@ a {
         justify-content: space-around;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         height: auto;
-        scale: 0.8;
+        scale: 0.8; */
+        display: none;
     }
 }
 
@@ -466,4 +471,8 @@ a {
 
 #AvisoRapidoBreve {
     text-align: center;
+}
+
+.redd {
+    color: rgb(88, 0, 0);
 }
