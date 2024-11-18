@@ -29,7 +29,7 @@ if (window.location.href.includes("http://127.0.0.1:5500/")) {
     document.getElementById("baixarxa").style.display = "none";
     document.getElementById("ban").style.display = "block";
     document.getElementById("mostt").style.display = "none";
-    document.getElementById("FALSOSITE").style.display = "block";
+    // document.getElementById("FALSOSITE").style.display = "block";
     document.body.innerHTML = `
                 <div id="AvisoRapidoBreve"> 
                 <h1>SITE "APAGADO" POR SUA SEGURANÇA!</h1>
@@ -37,23 +37,23 @@ if (window.location.href.includes("http://127.0.0.1:5500/")) {
                 <a href="https://humano123.github.io/CubeTools">Clique aqui para ir para o site verdadeiro!</a>
                 </div>
                 `;
-    function riscoCont() {
-        document.getElementById("FALSOSITE").style.display = "none";
+    // function riscoCont() {
+    //     document.getElementById("FALSOSITE").style.display = "none";
 
-        document.getElementsByTagName("title")[0].innerHTML = errorTagConfirm;
-        document.getElementById("baixarxa").style.display = "block";
-        document.getElementById("ban").style.display = "none";
-        document.getElementById("mostt").style.display = "block";
-        document.getElementById("ban2").style.display = "block";
-    }
-    function riscoVer() {
-        document.getElementById("FALSOSITE").style.display = "none";
-    }
-    const htmlOriginal = document.body.innerHTML;
+    //     document.getElementsByTagName("title")[0].innerHTML = errorTagConfirm;
+    //     document.getElementById("baixarxa").style.display = "block";
+    //     document.getElementById("ban").style.display = "none";
+    //     document.getElementById("mostt").style.display = "block";
+    //     document.getElementById("ban2").style.display = "block";
+    // }
+    // function riscoVer() {
+    //     document.getElementById("FALSOSITE").style.display = "none";
+    // }
+    // const htmlOriginal = document.body.innerHTML;
 
-    function seguro() {
-        document.body.innerHTML = '';
-    }
+    // function seguro() {
+    //     document.body.innerHTML = '';
+    // }
 }
 
 console.warn(`
