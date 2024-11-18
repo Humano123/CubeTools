@@ -17,7 +17,7 @@ if (window.location.href.includes("http://127.0.0.1:5500/")) {
     document.getElementById("devao").style.display = "block";
     console.log(textoDev);
 } else if (window.location.href.includes("https://humano123.github.io/CubeTools/")) {
-    document.getElementById("baixarxa").style.display = "none";
+    document.getElementById("baixarxa").style.display = "block";
     document.getElementsByTagName("title")[0].innerHTML = real;
 } else if (window.location.href.includes("#noDev")) {
     document.getElementsByTagName("title")[0].innerHTML = real;
