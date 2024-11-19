@@ -37,6 +37,7 @@ if /i "%cmd%"=="+cmd" (
     echo $ram - - Exibe a quantidade de memória RAM disponível.
     echo $datetime - - Exibe a data e hora atuais.
     echo $update - - Verifica o status do Windows Update.
+    echo $credits - - Mostra os creditos.
     echo --------------------------------------------------
     echo +cmd - - Abre o terminal de comandos.
     echo +notepad - - Abre o Bloco de Notas.
@@ -133,6 +134,10 @@ if /i "%cmd%"=="+cmd" (
 	    start https://humano123.github.io/CubeTools/
 ) else if /i "%cmd%"=="oi" (
 	echo CubeTools: Ola
+) else if /i "%cmd%"=="$credits" (
+    echo Empresa: MeiaHub
+    echo Criador: Thiago bel
+    echo Ajudante: Lmfsd
 ) else (
     echo Comando em BATCH executado
     %cmd%
