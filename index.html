@@ -37,6 +37,8 @@
             </div>
         </ul>
     </section> -->
+    
+    <button style="border: 1px solid black; position: fixed; z-index: 10;" onclick="voltar()" id="Voltar" class="bt">Voltar</button>
         <div id="coisinhaemcima" style="position: fixed; z-index: 10;" class="partes">
             <!-- <div style="display:flex;">
             <a target="_blank" href="https://linktr.ee/meiahub">
@@ -51,7 +53,9 @@
                 <a href="#Novidades" ondragstart="return false"><button class="bt">Novidades</button></a>
                 <!-- <a href="#Aviso" ondragstart="return false"><button class="bt">Aviso</button></a> -->
                 <a href="#E" ondragstart="return false"><button id="ErroMostrar" class="bt">Motivo do erro</button></a>
+                <button onclick="tirar()" id="Tirar" class="bt">Tirar</button>
                 <a id="devao" style="display: none;" href="#dev" ondragstart="return false"><button class="bt">DEV</button></a>
+                <p id="Jesus" style="font-size: 10px;">Jesus é perfeito!</p>
             </div>
             <div id="ban">
                 <button id="par" class="btt">Sobre</button>
@@ -61,7 +65,7 @@
         </div>
         <section id="Sobre" class="parteCIMA">
             <div class="dividir">
-                <h1 class="titulo">CubeTools</h1>
+                <h1 style="padding-top: 50px;" class="titulo">CubeTools</h1>
                 <section class="sobree">
                     <h1>CubeTools</h1>
                     <hr>
@@ -83,7 +87,7 @@
         <section id="Download" class="parteMEIO">
             <div class="dividir">
                 <h1 class="titulo">Não perca tempo!!!</h1>
-                <p>CubeTools é PERFEITO!</p>
+                <p>CubeTools é MARAVILHOSO!</p>
                 <!-- <h1>EM BREVE...</h1> -->
                 <div class="D">
                     <div class="bloco">
@@ -115,31 +119,25 @@
         <section id="Novidades" class="parteNOVO">
             <h1 class="titulo">Novidades</h1>
             <section class="novo">
-                <div class="dentu">
+                <div style="padding-bottom: 10px;" class="dentu">
                     <h4>Lançamento</h4>
                     <hr>
                     <p>Lançamos o aplicativo OFICIALMENTE!</p>
-                    <br>
                     <h4>Nova parte</h4>
                     <hr>
                     <p>Foi adicionado uma nova etapa (Novidades) ela serve para mostrar as atualizações do CubeTools, tanto do site, quanto do aplicativo em si.</p>
-                    <br>
                     <h4>Segurança</h4>
                     <hr>
                     <p>Foi adicionado nova medida de segurança contra golpes, por exemplo, quando alguem "roubar" o codigo inteiro do site, iremos avisar quando o codigo foi "roubado".</p>
-                    <br>
                     <h4>Termos de Condição de Uso</h4>
                     <hr>
                     <p>Adicionamos um termos de condição de uso no aplicativo, que diz que caso danifique o seu computador por causa do CubeTools, não seremos responsaveis pelos os danos.</p>
-                    <br>
                     <h4>Segredos</h4>
                     <hr>
                     <p>Adicionamos uns segredinhos no site bem divertidos.</p>
-                    <br>
                     <h4>Bugs</h4>
                     <hr>
                     <p>Resolvemos alguns bugs.</p>
-                    <br>
                 </div>
             </section>
         </section>
@@ -165,6 +163,8 @@
         <script src="scripts/dev/dev.js"></script>
         <script src="scripts/security/mobile/SemMobile.js"></script>
         <script src="scripts/download/baixar.js"></script>
+        <script src="scripts/security/mobile/script.css"></script>
+        <script src="design/scripts/geral.js"></script>
     </div>
 </body>
 
