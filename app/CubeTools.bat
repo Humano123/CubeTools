@@ -10,7 +10,7 @@ echo Este script é fornecido "como está" e sem qualquer garantia.
 echo Ao continuar, você concorda em usar o CubeTools por sua conta e risco.
 echo Nenhuma responsabilidade será assumida por quaisquer danos.
 echo Pressione qualquer tecla para aceitar e continuar, ou feche a janela para sair.
-pause >nul
+pause
 
 echo =========
 echo CubeTools
@@ -38,6 +38,7 @@ if /i "%cmd%"=="+cmd" (
     echo $datetime - - Exibe a data e hora atuais.
     echo $update - - Verifica o status do Windows Update.
     echo $credits - - Mostra os creditos.
+    echo $version - - Mostra a versão
     echo --------------------------------------------------
     echo +cmd - - Abre o terminal de comandos.
     echo +notepad - - Abre o Bloco de Notas.
@@ -137,7 +138,9 @@ if /i "%cmd%"=="+cmd" (
 ) else if /i "%cmd%"=="$credits" (
     echo Empresa: MeiaHub
     echo Criador: Thiago bel
-    echo Ajudante: Lmfsd
+    echo Ideias: Lmfsd
+) else if /i "%cmd%"=="$version" (
+    echo Versão: 3.1.4.1
 ) else (
     echo Comando em BATCH executado
     %cmd%
