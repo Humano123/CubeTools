@@ -44,13 +44,18 @@ if /i "%cmd%"=="+cmd" (
     echo +notepad - - Abre o Bloco de Notas.
     echo +novbs - - Fecha processos de VBScript.
     echo +file.reset - - Reseta o conteúdo de um arquivo.
-    echo brasil - - Exibe a palavra "brasil".
     echo +explorer - - Abre o Explorador de Arquivos.
     echo +calc - - Abre a Calculadora.
     echo +alert - - Exibe um alerta no navegador.
     echo +prompt - - Exibe um prompt no navegador.
     echo +browser - - Abre uma URL no navegador.
-    echo +cubetools - - Abre o site do CubeTools
+    echo +cubetools - - Abre o site do CubeTools.
+    echo +htmlAdd - - Adiciona uma linha de codigo no HTML
+    echo +htmlSubstitue - - Substitue o codigo inteiro do HTML.
+    echo +htmlLearn - - Lê o codigo inteiro do HTML.
+    echo +LocalStorageAdd - - Adiciona um texto no localstorage do CubeTools.
+    echo +LocalStorageSubstitue - - Substutie o texto no localstorage do CubeTools.
+    echo +LocalStorageLearn - - Mostra o localstorage do CubeTools.
 ) else if /i "%cmd%"=="$cmd" (
     cmd
 ) else if /i "%cmd%"=="+notepad" (
@@ -140,7 +145,26 @@ if /i "%cmd%"=="+cmd" (
     echo Criador: Thiago bel
     echo Ideias: Lmfsd
 ) else if /i "%cmd%"=="$version" (
-    echo Versão: 3.1.4.1
+    echo Versão: 5.1.4.0
+) else if /i "%cmd%"=="+htmlsubstitue" ( 
+	set /p dentoo="-"
+	echo !dentoo! > MeuSiteCubeTools.html
+	start MeuSiteCubeTools.html
+) else if /i "%cmd%"=="+htmladd" (
+	set /p dentoo="-"
+	echo !dentoo! >> MeuSiteCubeTools.html
+	start MeuSiteCubeTools.html
+) else if /i "%cmd%"=="+htmllearn" (
+	set /p nomedohtml="NomeDoHtml (não coloque ".html" no final):"
+	type !nomedohtml!.html
+) else if /i "%cmd%"=="+localstoragesubstitue" (
+	set /p dentee="-"
+	echo !dentee! > LocalStorageDoCubeTools.txt
+) else if /i "%cmd%"=="+localstorageadd" (
+	set /p dentaa="-"
+	echo !dentaa! >> LocalStorageDoCubeTools.txt
+) else if /i "%cmd%"=="+localstoragelearn" (
+	type LocalStorageDoCubeTools.txt
 ) else (
     echo Comando em BATCH executado
     %cmd%
