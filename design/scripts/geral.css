@@ -23,7 +23,8 @@ body {
 .parteEXTREMA,
 .parteERRO,
 .parteNOVO,
-.parteAVISO {
+.parteAVISO,
+.parteQUASEMEIO {
     background-color: darksalmon;
     color: white;
     display: flex;
@@ -71,6 +72,12 @@ body {
 .parteAVISO {
     background-color: rgb(95, 95, 0);
     color: white;
+}
+
+.parteQUASEMEIO {
+    background-color: blue;
+    /* background-color: rgb(0, 0, 181); */
+    color: aliceblue;
 }
 .header {
     position: absolute;
@@ -254,7 +261,11 @@ a {
         scale: 0.5;
         display: none;
     }
-
+    
+    .parteQUASEMEIO {
+        background-color: rgb(0, 0, 181);
+    }
+    
     .galeriaa {
         flex-direction: column;
         height: auto;
