@@ -174,10 +174,15 @@ if (window.location.href.includes('?logotipoAntiga')) {
     if (favicon) {
         favicon.href = "design/images/logotipo2.png"
     }
-} else {
+} else if (window.location.href.includes('?logotipoExNova')) {
     const favicon = document.getElementById("favicon");
     if (favicon) {
         favicon.href = "design/images/logotipo3.png"
+    }
+} else {
+    const favicon = document.getElementById("favicon");
+    if (favicon) {
+        favicon.href = "design/images/logotipo4.png"
     }
 }
 
