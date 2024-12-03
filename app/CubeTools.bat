@@ -3,6 +3,13 @@ setlocal enabledelayedexpansion
 
 title CubeTools
 
+if not exist "CubeTools.bat" (
+	echo Erro fatal na versão do app, por favor, desinstale e instale novamente, pois essa versão não funciona mais, apartir da versão 3.2.4.0, ela parou de existir
+	pause
+	start https://humano123.github.io/CubeTools/#Download
+	exit /b
+)
+
 echo ================================
 echo Termos de Condição de Uso - CubeTools
 echo ================================
@@ -39,6 +46,7 @@ if /i "%cmd%"=="+cmd" (
     echo $update - - Verifica o status do Windows Update.
     echo $credits - - Mostra os creditos.
     echo $version - - Mostra a versão
+    echo $learncode - - Ler o codigo inteiro de um arquivo.
     echo --------------------------------------------------
     echo +cmd - - Abre o terminal de comandos.
     echo +notepad - - Abre o Bloco de Notas.
@@ -56,6 +64,7 @@ if /i "%cmd%"=="+cmd" (
     echo +LocalStorageAdd - - Adiciona um texto no localstorage do CubeTools.
     echo +LocalStorageSubstitue - - Substutie o texto no localstorage do CubeTools.
     echo +LocalStorageLearn - - Mostra o localstorage do CubeTools.
+    echo +copyar - - Copiar o codigo inteiro de um arquivo.
 ) else if /i "%cmd%"=="$cmd" (
     cmd
 ) else if /i "%cmd%"=="+notepad" (
@@ -145,7 +154,7 @@ if /i "%cmd%"=="+cmd" (
     echo Criador: Thiago bel
     echo Ideias: Lmfsd
 ) else if /i "%cmd%"=="$version" (
-    echo Versão: 5.1.4.0
+    echo Versão: 3.2.4.0
 ) else if /i "%cmd%"=="+htmlsubstitue" ( 
 	set /p dentoo="-"
 	echo !dentoo! > MeuSiteCubeTools.html
@@ -165,6 +174,23 @@ if /i "%cmd%"=="+cmd" (
 	echo !dentaa! >> LocalStorageDoCubeTools.txt
 ) else if /i "%cmd%"=="+localstoragelearn" (
 	type LocalStorageDoCubeTools.txt
+) else if /i "%cmd%"=="$learncode" (
+    set /p codigopralerarq="Nome do arquivo (inclua a extensão): "
+    echo !codigopralerarq!
+	echo.
+    type "!codigopralerarq!"
+	echo.
+) else if /i "%cmd%"=="+copyar" (
+	set /p arquivocopyar="Nome do arquivo: "
+    if not exist "!arquivocopyar!" (
+        echo O arquivo "!arquivocopyar!" nao foi encontrado.
+        pause
+        exit /b
+    )
+
+    type "!arquivocopyar!" | clip
+
+    echo O conteúdo de "!arquivocopyar!" foi copiado para a área de transferência.
 ) else (
     echo Comando em BATCH executado
     %cmd%
