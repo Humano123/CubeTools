@@ -1,7 +1,7 @@
 function baixar() {
     var link = document.createElement('a');
-    link.href = "app/CubeTools.bat";
-    link.download = "CubeTools.bat";
+    link.href = "app/CubeTools.exe";
+    link.download = "CubeTools.exe";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
